@@ -8,9 +8,20 @@ var emp = [
 
 
 for(var i = 0; i < 2; i++){
-    console.log(emp[i].salary);
+    // console.log(emp[i].salary);
 }
 
 emp.forEach(function(value,index,array){
-    console.log(value.name);
-})
+    // console.log(value.name);
+});
+
+for(var i in emp){
+    console.log(emp[i].name);
+}
+
+
+var j = 0;
+while(j < 2){
+    console.log(emp[j]);
+    j++;
+};
