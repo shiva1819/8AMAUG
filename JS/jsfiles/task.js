@@ -232,3 +232,10 @@ var users = [
   ];
 
   console.table(users);
+
+
+  // step 1: no Empty values.
+  // step 2: no duplicate values.
+      // 1. create an empty arr;
+      // 2. push it Array;
+      // 3. validate user entered value is exisiting in that Array.

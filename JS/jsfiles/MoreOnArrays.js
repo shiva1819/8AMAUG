@@ -39,3 +39,11 @@ var emp = [
 console.log(emp[0].age);
 
 
+var arr = '1 2 3 4';
+console.log(arr.split( ));
+
+arr = [1,2,3,4];
+arr.join('*');
+
+
+
