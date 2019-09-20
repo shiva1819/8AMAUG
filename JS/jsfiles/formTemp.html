@@ -353,22 +353,12 @@
             btn.style.display = 'inline';
         }
 
+        console.log(JSON.parse(localStorage.getItem('arr')));
 
         btn.addEventListener('click', function () {
             // debugger;
 
-            var Obj = {};
-            var genderValue = "";
-
-
-            Obj.Name = userName.value;
-
-
-
-            arr.push(Obj);
-
-            console.log(arr);
-
+            
             for (var i = 0; i < gender.length; i++) {
                 if (gender[i].checked == true) {
                     console.log(gender[i].value);
@@ -376,6 +366,30 @@
 
                 }
             }
+
+
+            var Obj = {};
+            var genderValue = "";
+
+
+            Obj.Name = userName.value;
+            Obj.Passcode = password.value;
+            Obj.Email = email.value;
+            Obj.Contact = contact.value;
+            Obj.Gender = genderValue;
+            Obj.Country = country.value;
+
+            
+
+            console.log(arr);
+            if(localStorage.getItem('arr') != "" || localStorage.getItem('arr') != undefined || localStorage.getItem(arr) != null){
+                arr.push(Obj);
+                localStorage.setItem('arr', JSON.stringify(arr));
+            }else{
+                arr = [];
+            }
+
+            console.log(JSON.parse(localStorage.getItem('arr')));
 
             var TR = document.createElement('tr');
             var slTd = document.createElement('td');
@@ -447,6 +461,10 @@
                 
 
                 // tdText[1].innerText = userName.value;
+            }
+
+            Delete.onclick = function(){
+                tBind.removeChild(this.parentNode.parentNode);                
             }
 
 
