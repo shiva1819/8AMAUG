@@ -356,22 +356,43 @@
         console.log(JSON.parse(localStorage.getItem('arr')));
 
         btn.addEventListener('click', function () {
-            // debugger;
+
+
+            var nameRegEx = /^[a-zA-Z]+$/g;
+            var numRegEx = /^[0-9]+$/g;
+            var EmailRegEx = /^[a-zA-Z]+[0-9]+@+[a-zA-Z]+\.([a-z\.]){0,6}?$/g;
+
+
+
+            if(!nameRegEx.test(userName.value)){
+                console.log('your name should not contain other than char"s')
+                return false;
+            }else if(password.value.length < 6){
+                console.log('Please enter min 6 char"s');
+                return false;
+            }else if(!EmailRegEx.test(email.value)){
+                console.log('Your email patter shoud be: abc1@gmail.com');
+                return false;
+            }else if(!numRegEx.test(contact.value)){
+                console.log(' your contact number shoulnd not contain other num"s ');
+                return false;
+            }else{
 
             
+
+
+            // debugger;
+
+            var genderValue = "";
             for (var i = 0; i < gender.length; i++) {
                 if (gender[i].checked == true) {
                     console.log(gender[i].value);
                     genderValue = gender[i].value;
-
                 }
             }
 
-
             var Obj = {};
-            var genderValue = "";
-
-
+            
             Obj.Name = userName.value;
             Obj.Passcode = password.value;
             Obj.Email = email.value;
@@ -440,27 +461,80 @@
 
             Edit.onclick = function(){
                 // console.log(this.parentNode.parentNode.children);
+
+                
                 update.style.display = 'inline';
                 btn.style.display = 'none';
+
+                tableBind.style.display = 'none';
+                main1Wrap.style.display = 'block';
 
                 var tdText = this.parentNode.parentNode.children;
 
                 userName.value = tdText[1].innerText;
-                password.value = "";
-                email.value = "";
-                contact.value = "";
+                password.value = tdText[2].innerText;
+                email.value = tdText[3].innerText;
+                contact.value = tdText[4].innerText;
 
-                for (var j = 0; j < gender.length; j++) {
-                    if (gender[j].checked == true) {
-                        gender[j].checked = false;
 
+                if(tdText[5].innerText == 'Male' || tdText[5].innerText == 'male'){
+                        gender[0].checked = true;
+                    }else if(tdText[5].innerText == 'female' || tdText[5].innerText == 'Female'){
+                        gender[1].checked = true;
+                    }else{
+                        gender[1].checked = false;
+                        gender[0].checked = false;
                     }
-                };
 
-                country.value = "";
+                // for (var k = 0; k < gender.length; k++) {
+                //     if (tdText[5].innerText == gender[k].value) {
+                //         gender[k].checked = true;
+                //     }
+                // };
+
+                country.value = tdText[6].innerText;
                 
 
                 // tdText[1].innerText = userName.value;
+
+                update.onclick = function(){
+                    tdText[1].innerText = userName.value; 
+                    tdText[2].innerText = password.value;
+                    tdText[3].innerText = email.value;
+                    tdText[4].innerText = contact.value;
+
+                    if(gender[0].checked == true){
+                        genderValue = 'Male';
+                    }else{
+                        genderValue = 'Female';
+                    }
+
+                    tdText[5].innerText = genderValue;
+                    tdText[6].innerText = country.value;
+                    
+                    tableBind.style.display = 'block';
+                    main1Wrap.style.display = 'none';
+
+                    this.style.display = 'none';
+                    btn.style.display = 'block';
+
+
+
+                    userName.value = "";
+            password.value = "";
+            email.value = "";
+            contact.value = "";
+
+            for (var j = 0; j < gender.length; j++) {
+                if (gender[j].checked == true) {
+                    gender[j].checked = false;
+
+                }
+            };
+
+            country.value = "";
+
+                }
             }
 
             Delete.onclick = function(){
@@ -498,7 +572,7 @@
             country.value = "";
 
 
-
+        }
         });
     </script>
 </body>
