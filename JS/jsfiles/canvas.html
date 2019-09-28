@@ -5,10 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        #mycan{
+            border: 1px solid;
+        }
+    </style>
 </head>
 <body>
+
+    <canvas id="mycan" width="500" height="500">
+        asdasdasdsa
+    </canvas>
     <script>
-        
+        var Can = document.querySelector('#mycan')
+        var ctx = Can.getContext('2d');
+
+            ctx.fillStyle = 'red';
+            
+            // ctx.fillRect(50,50,100,100);
+            // ctx.clearRect(100,100,50,50);
+
+
+            // ctx.beginPath();
+            // ctx.moveTo(150,0);
+            // ctx.lineTo(150,500);
+            // ctx.stroke();
+            // ctx.closePath();
+
+            // ctx.beginPath();
+            // ctx.arc(200,200,50,0,2 * Math.PI,true);
+            // ctx.stroke(); 
+            // ctx.closePath();
+
+            var l1 = 0;
+            var l2 = 0;
+            setInterval(function(){
+                ctx.clearRect(0,0,500,500);
+                l1++;
+                l2++;
+                ctx.beginPath();
+                ctx.moveTo(0,0);
+                ctx.lineTo(l1,l2);
+                ctx.stroke();
+                ctx.closePath();
+            },10);
+
+
+
+
     </script>
 </body>
 </html>

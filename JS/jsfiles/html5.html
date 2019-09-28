@@ -7,6 +7,61 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <!-- 
+        main, header, article, section, nav, figure, aside, figcaption, footer, 
+     -->
+
+     <header id="header">
+         <nav>
+             <logo id="logo"> myLOGO </logo>
+             <ul>
+                 <li>
+                     <a href="#"> HOME </a>
+                 </li>
+             </ul>
+         </nav>
+     </header>
+     <aside>
+
+     </aside>
+
+     <figure>
+         <img src="." alt="test">
+     </figure>
+
+
+<!-- 
+     <video autoplay controls muted loop>
+         <source src="../../zip_Forrest Beach Ocean/Forrest Beach Ocean.mp4" type="video/mp4">
+     </video> -->
+
+     <!-- <audio autoplay muted controls>
+         <source src="../../Justin-Bieber-Sorry.mp3" type="audio/mp3">
+     </audio> -->
+
+
+
+     <form action="">
+
+        0 <input type="range" id="test" min="0" max="255"> 255
+        <input type="color">
+        <input type="date">
+        <input type="file">
+        <input type="email">
+        <input type="number">
+        <input type="search">
+
+
+
+     </form>
+
+     <script>
+         var test = document.querySelector('#test');
+
+
+         test.onchange = function(){
+             console.log(this.value);
+         }
+     </script>
 </body>
 </html>

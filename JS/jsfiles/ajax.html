@@ -7,8 +7,34 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
+    <a href="javascript:void(0)"> webstorage </a>
+    <div id="demo">
         
+    </div>
+    <script>
+
+
+        document.querySelector('a').onclick = function(){
+
+        
+
+        var http = new XMLHttpRequest();
+            http.onreadystatechange = function(){
+                if(this.status == 200 && this.readyState == 4){
+                    console.log(this.response);
+                    // console.log(JSON.parse(this.responseText));
+                    // var Data = JSON.parse(this.responseText);
+                    document.getElementById('demo').innerHTML = this.response;    
+                }else{
+                    // alert('something went wrong...');
+                }
+            }
+            // http.open('GET', 'https://jsonplaceholder.typicode.com/users', true);
+            http.open('GET', this.innerText+'.html', true);
+            http.send();
+
+        }
+
     </script>
 </body>
 </html>

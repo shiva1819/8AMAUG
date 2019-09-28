@@ -1,12 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700&display=swap" rel="stylesheet">
     <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        #mainbg {
+            height: 100vh;
+            overflow: hidden;
+            position: absolute;
+            z-index: -9999;
+            opacity: 0.8;
+        }
+
+        .h100 {
+            min-height: 100vh;
+        }
+
+        #HomeSec {
+            display: flex;
+            height: 90vh;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #HomeSec h3 {
+            margin-bottom: 50px;
+            font-size: 16px;
+            letter-spacing: 10px;
+            color: #ffffff;
+            text-shadow: 1px 1px 5px #000;
+        }
+
+        #HomeSec h1 {
+            letter-spacing: 20px;
+            font-size: 30px;
+            color: #ffffff;
+            text-shadow: 1px 1px 5px #000;
+        }
+
+        #mainHeader {
+            display: flex;
+            justify-content: space-between;
+            height: 50px;
+            align-items: center;
+            padding-left: 20px;
+            padding-right: 20px;
+            color: #fff;
+        }
+
+        #mainHeader ul {
+            display: flex;
+        }
+
+        #mainHeader ul li {
+            width: 100px;
+            text-align: center;
+            list-style-type: none;
+        }
+
+        #mainHeader ul li a {
+            text-decoration: none;
+            color: #fff;
+            text-shadow: 2px 2px 5px #000;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div id="mainbg">
+        <video width="100%" autoplay loop muted>
+            <source src="../../zip_Forrest Beach Ocean/Forrest Beach Ocean.mp4" type="video/mp4">
+        </video>
+        
+    </div>
+    <header id="mainHeader">
+        <div id="logo">
+            <h2> Main Logo </h2>
+        </div>
+        <ul class="mainNav">
+            <li>
+                <a href="#"> HOME </a>
+            </li>
+            <li>
+                <a href="#"> ABOUT </a>
+            </li>
+            <li>
+                <a href="#"> GALLERy </a>
+            </li>
+            <li>
+                <a href="#"> SERVICES </a>
+            </li>
+            <li>
+                <a href="#"> CONTACT </a>
+            </li>
+        </ul>
+    </header>
+    <article id="HomeSec" class="h100">
+        <h3>HELLO & WELCOME</h3>
+        <h1> WELCOME TO BEACH SIDE </h1>
+        <button type="button" id="btn"> Pause </button>
+        <button type="button" id="mute"> Mute </button>
+    </article>
+    <article id="AboutSec" class="h100">
+        <h1> Hello ABout </h1>
+    </article>
+
+    <script>
+        var btn = document.querySelector('#btn');
+        var vid = document.getElementsByTagName('video')[0];
+
+            btn.onclick = function(){
+                if(vid.paused == true){
+                    vid.play();
+                    vid.muted;
+                }else{
+                    vid.pause();
+                }
+            }
+
+    </script>
 </body>
+
 </html>

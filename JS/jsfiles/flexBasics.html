@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        ul{
+            display: flex;
+            height: 100vh;
+            /* flex-direction: column; */
+            flex-wrap: wrap;
+            justify-content: space-between;
+            /* align-items: flex-end; */
+            align-content: center;
+        }
+        ul li{
+            list-style: none;
+            width:100px;
+            border: 1px solid;
+        }
+
+
+        ul li:last-child{
+            order: -1;
+        }
+        .one{
+            order: 1;
+            flex-grow: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div class="menu">
+            <ul>
+                <li>
+                    HOME 1
+                </li>
+                <li class="one">
+                    HOME 2
+                </li>
+                <li>
+                    HOME 3
+                </li>
+                <li>
+                    HOME 4
+                </li>
+                <li>
+                    HOME 5
+                </li>
+                <li>
+                    HOME 6
+                </li>
+                <!-- <li>
+                        HOME
+                    </li>
+                    <li>
+                        HOME
+                    </li>
+                    <li>
+                        HOME
+                    </li>
+                    <li>
+                        HOME
+                    </li>
+                    <li>
+                        HOME
+                    </li>
+                    <li>
+                        HOME
+                    </li> -->
+                
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
